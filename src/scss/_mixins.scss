@@ -1,0 +1,148 @@
+@use './variables' as *;
+
+/*POSITIONING*/
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin translate($x: null, $y: null) {
+    @if $x != null and $y != null {
+        transform: translate($x, $y);
+    } @else if $x != null {
+        transform: translateX($x);
+    } @else if $y != null {
+        transform: translateY($y);
+    }
+}
+
+/*SIZES*/
+
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+/*BGC & COLORS*/
+
+@mixin gradient($deg: 180deg, $colors...) {
+    background: linear-gradient($deg, $colors);
+}
+
+/*SPECIFIC*/
+
+@mixin button($width, $height: 72px, $font-size: 32px) {
+    @include wh($width, $height);
+
+    font-size: $font-size;
+    position: relative;
+    border-radius: 999px;
+    background: $gradient-button;
+    box-shadow: $def-shadow-btn;
+    transition: box-shadow 0.3s ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: $hover-shadow-btn;
+    }
+
+    &:active {
+        box-shadow: $outer-active-shadow;
+    }
+}
+
+/*wheel*/
+
+@mixin wheel-star-ovrl($trX: -50%, $trY: -50%) {
+    @include translate($trX, $trY);
+
+    position: absolute;
+    z-index: 1;
+    opacity: 60%;
+}
+
+@mixin wheel-arrow($top) {
+    position: absolute;
+    z-index: 3;
+
+    top: $top;
+}
+
+@mixin wheel-sector($width) {
+    width: $width;
+    aspect-ratio: 1/1.3;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    transform-origin: bottom;
+}
+
+@mixin wheel-sector-text($font-size, $top) {
+    @include translate(-50%);
+
+    position: absolute;
+    top: $top;
+    left: 50%;
+
+    font-size: $font-size;
+}
+
+/*MODAL*/
+
+@mixin modal-overlay {
+    @include wh(100vw, 100vh);
+    @include flex(row, center, center);
+
+    position: fixed;
+    top: 0; 
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(4px);    
+    
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+@mixin modal-content-spec($width, $height, $p-t, $p-b, $b-radius, $b-inset) {
+    @include flex(column, space-between, center);
+    @include wh($width, $height);
+
+    padding-top: $p-t;
+    padding-bottom: $p-b;
+    border-radius: $b-radius;
+    background: $gradient-modal;
+
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: $b-inset;
+        background: $gradient-modal-border;
+        border-radius: $b-radius + 10px; 
+        
+        z-index: -1;
+    }
+}
+
+@mixin modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@mixin modal-text($font-size, $letter-spc: 0) {
+    font-size: $font-size;
+    letter-spacing: $letter-spc;
+}

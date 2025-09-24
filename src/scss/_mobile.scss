@@ -1,0 +1,53 @@
+@use './variables' as *;
+@use './fonts' as *;
+@use './mixins' as *;
+
+@media (max-width: 375px) {
+
+    #wheel-container {
+        #wheel-star-overlay {
+            @include wheel-star-ovrl('null', -49%);
+        }
+
+        #wheel-arrow {
+            @include wheel-arrow(-21px);
+        }
+    }
+
+    #wheel-inner {
+        .sector {
+            @include wheel-sector(106px);
+
+            .text {
+                @include wheel-sector-text(16px, 24px);
+            }
+        }
+
+        .sector-purple {        
+            background-image: url('./assets/img/mobile/Ellipse-purple-mob.svg');
+        }
+
+        .sector-blue {
+            background-image: url('./assets/img/mobile/Ellipse-blue-mob.svg');
+        }
+    }
+    
+
+    #rotate-btn {
+        @include button(350px, 52px, $font-size: 22px);
+    }
+
+
+    .modal-content {
+        @include modal-content-spec(343.95px, 273.65px, 53px, 15px, 42.57px, -6px);
+
+        #modal-greetings, #modal-reward, #reward-value {
+            @include modal-text(26px, 0.5px)
+        }
+
+        #modal-btn  {
+            @include button(296px, 52px, 22px);
+        }
+    }
+
+}

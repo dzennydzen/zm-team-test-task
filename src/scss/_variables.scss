@@ -1,0 +1,61 @@
+/*base*/ 
+
+%base-font {
+    font-family: 'Geologica Bold';
+    color: white;
+}
+
+%base-reset {
+    margin: 0;
+    padding: 0;
+}
+
+%reset-style {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+
+/*specific styles*/
+
+%main-margin {
+    margin-top: 59px;
+    margin-bottom: 63px;
+}
+
+%wheel-center-anim {
+    transition: transform 7s cubic-bezier(0.3, 0.8, 0.3, 1);
+}
+
+/*colors & gradients*/
+
+$gradient-body: linear-gradient(180deg, #2477A0, #481C7F);
+$gradient-button: linear-gradient(180deg, #FFC700, #E4A400);
+$gradient-modal: linear-gradient(180deg, #5977C3, #54268D);
+$gradient-modal-border: linear-gradient(140deg, #789CD2, #5977C3, #54268D);
+
+/*shadows*/
+
+//default
+$inner-shadow-top: inset 0px -6px 4px rgba(0, 0, 0, 0.2);
+$inner-shadow-bottom: inset 0px 4px 4px rgba(255, 255, 255, 0.5);
+$outer-shadow: 0px 6px 12px rgba(27, 26, 72, 0.5);
+$def-shadow-btn: $inner-shadow-top, $inner-shadow-bottom, $outer-shadow;
+
+//hover
+$outer-hover-shadow: 0px 6px 12px rgba(38, 108, 154, 1);
+$hover-shadow-btn: $inner-shadow-top, $inner-shadow-bottom, $outer-hover-shadow;
+
+//active
+$outer-active-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$active-shadow-btn: $outer-active-shadow;
+
+
+//modal-shadow
+
+$modal-shadow: 0px 9px 60px #0E1155;
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZM Wheel</title>
+</head>
+<body>
+    <main>
+        <div id="icon-container">
+            <img src="./assets/img/desktop/Logo.svg" alt="ZM logo"> <!--ZM Logo-->
+        </div>
+        
+        <div id="wheel-container"> <!--Wheel-->
+            <picture id="wheel-border"> <!--Static border-->
+                <source media="(max-width: 375px)" srcset="./assets/img/mobile/Border-mob.svg">
+                <img src="./assets/img/desktop/Border.svg" alt="border">
+            </picture>
+
+            <picture id="wheel-arrow"> <!--Wheel arrow-->
+                <source media="(max-width: 375px)" srcset="./assets/img/mobile/Arrow-mob.svg">
+                <img src="./assets/img/desktop/Arrow.svg" alt="arrow">
+            </picture>
+
+            <div id="wheel-inner"> <!--Wheel rotated center-->
+                <div class="sector sector-purple" data-value="50">
+                    <span class="text">50</span>
+                </div>
+                <div class="sector sector-blue" data-value="ПУСТО">
+                    <span class="text">ПУСТО</span>
+                </div>
+                <div class="sector sector-purple" data-value="100">
+                    <span class="text">100</span>
+                </div>
+                <div class="sector sector-blue" data-value="ПОВТОР">
+                    <span class="text">ПОВТОР</span>
+                </div>
+                <div class="sector sector-purple" data-value="150">
+                    <span class="text">150</span>
+                </div>
+                <div class="sector sector-blue" data-value="ПУСТО">
+                    <span class="text">ПУСТО</span>
+                </div>
+                <div class="sector sector-purple" data-value="300">
+                    <span class="text">300</span>
+                </div>
+                <div class="sector sector-blue" data-value="ПОВТОР">
+                    <span class="text">ПОВТОР</span>
+                </div>
+
+                <picture id="wheel-star-overlay"> <!--Wheel star-vector overlay-->
+                    <source media="(max-width: 375px)" srcset="./assets/img/mobile/Vector.svg">
+                    <img src="./assets/img/desktop/Vector.svg" alt="vector-star">
+                </picture>
+            </div>
+
+            <picture id="wheel-center"> <!--Wheel static center-->
+                <source media="(max-width: 375px)" srcset="./assets/img/mobile/Center-mob.svg">
+                <img src="./assets/img/desktop/Center.svg" alt="wheel-center">
+            </picture>
+
+        </div>
+
+        <button id="rotate-btn" class="reset-style">КРУТИ</button> <!--Wheel button-->
+    </main>
+
+    <div class="modal"> <!--Modal-->
+        <div class="modal-content">
+            <h1 id="modal-greetings" class="reset-style">ТЫ МОЛОДЕЦ!</h1>
+            <p id="modal-reward" class="reset-style">ВОТ ТВОИ <span id="reward-value"></span></p>
+            <button type="button" id="modal-btn" class="reset-style">ЗАБРАТЬ</button>
+        </div>
+    </div>
+</body>
+</html>

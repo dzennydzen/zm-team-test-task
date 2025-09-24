@@ -1,0 +1,33 @@
+@use './variables' as *;
+@use './fonts' as *;
+@use './mixins' as *;
+
+.modal {
+    @include modal-overlay;
+}
+
+.active {
+    @include modal-active;
+}
+
+.modal-content {
+    @include modal-content-spec(500px, 387px, 81px, 35px, 63px, -9px);
+    box-shadow: $modal-shadow;
+
+    #modal-reward, #reward-value {
+        color: #F5BA00;
+    }
+
+    #modal-reward {
+       margin-bottom: 8px;
+    }
+
+    #modal-greetings, #modal-reward, #reward-value {
+       @include modal-text(40px);
+    }
+
+    #modal-btn {
+        @include button(438px);
+    }
+}
+

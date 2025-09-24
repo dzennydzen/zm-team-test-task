@@ -1,0 +1,32 @@
+@use './variables' as *;
+@use './fonts' as *;
+@use './mixins' as *;
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @extend %base-reset;
+    @extend %base-font;
+    @include flex(row, center);
+
+    background: $gradient-body;
+    height: 100vh;
+
+
+  main {
+        @include flex(column, space-between, center);
+        @extend %main-margin;
+    }
+}
+
+.reset-style {
+    @extend %reset-style;
+}
+
+#rotate-btn {
+    @include button(409px);
+}
+

@@ -1,0 +1,61 @@
+@use './variables' as *;
+@use './fonts' as *;
+@use './mixins' as *;
+
+#wheel-container {
+    @include flex(row, center);
+    position: relative;
+
+    #wheel-star-overlay {
+        @include wheel-star-ovrl();
+    }
+
+    #wheel-center {
+        @include translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        z-index: 2;
+    }
+
+    #wheel-border {
+        z-index: 2
+    }
+
+    #wheel-arrow {
+        @include wheel-arrow(-35px);
+    }
+}
+
+#wheel-inner{
+    @include translate(-50%, -50%);
+    
+    position: absolute;
+    top: 49.7%;
+    left: 50%;
+
+    transition: transform 7s cubic-bezier(0.3, 0.8, 0.3, 1);
+
+    .sector {
+        @include wheel-sector(181px);
+       
+       .text {
+            @include wheel-sector-text(26px, 40px);
+        }
+    }
+
+    @for $i from 0 through 7 {
+        .sector:nth-child(#{$i + 1}) {
+            transform: translate(-50%, -100%) rotate($i * 45deg);
+        }
+    }
+
+    .sector-purple {        
+        background-image: url('./assets/img/desktop/Ellipse-purple-desktop.svg');
+    }
+
+    .sector-blue {
+        background-image: url('./assets/img/desktop/Ellipse-blue-desktop.svg');
+    }
+}
