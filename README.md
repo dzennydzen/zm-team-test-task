@@ -1,0 +1,21 @@
+# Wheel Task
+
+Test task for ZM Team frontend developer position.
+
+## Features
+- Interactive rotating wheel with 8 sectors
+- Modal window with results display  
+- Responsive design (desktop & mobile)
+- Smooth CSS animations
+- SCSS modules architecture
+
+## Technologies
+- HTML5, CSS3, JavaScript (ES6+)
+- SCSS
+- Webpack, Git
+
+## Installation
+```bash
+npm install
+npm run start  # development mode
+npm run build  # production build
