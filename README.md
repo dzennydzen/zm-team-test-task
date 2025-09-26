@@ -1,6 +1,6 @@
 # Wheel Task
 
-Test task for ZM Team frontend developer position.
+Test task for ZM Team junior frontend developer position.
 
 ## Features
 - Interactive rotating wheel with 8 sectors
