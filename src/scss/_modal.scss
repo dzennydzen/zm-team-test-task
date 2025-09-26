@@ -3,6 +3,7 @@
 @use './mixins' as *;
 
 .modal {
+    display: none;
     @include modal-overlay;
 }
 
