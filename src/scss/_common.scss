@@ -10,7 +10,9 @@
 body {
     @extend %base-reset;
     @extend %base-font;
+
     @include flex(row, center);
+    text-shadow: $text-purple-stroke;
 
     background: $gradient-body;
     height: 100vh;
@@ -28,5 +30,7 @@ body {
 
 #rotate-btn {
     @include button(409px);
+
+    text-shadow: $text-purple-stroke;
 }
 
