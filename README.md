@@ -14,6 +14,10 @@ Test task for ZM Team junior frontend developer position.
 - SCSS
 - Webpack, Git
 
+## Deploy
+Production build is automatically deployed to GitHub Pages from the gh-pages branch.
+[Visit Pages](https://dzennydzen.github.io/zm-team-test-task/)
+
 ## Installation
 ```bash
 npm install
